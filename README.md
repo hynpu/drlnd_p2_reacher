@@ -96,11 +96,11 @@ We then take some random actions based on the environment we created just now, a
 
 The last step is to implement the DDPG algorithm to trian the agents. The code can be found in [**ddpg_agent.py**](https://github.com/hynpu/drlnd_p2_reacher/blob/main/ddpg_agent.py). However, I would like to mention several techniques to improve the speed and convergence:
   
-* Use 20 agents to improve training speed: "Often, cooperation among multiple RL agents is much more critical: multiple agents must collaborate to complete a common goal, expedite learning, protect privacy, offer resiliency against failures and adversarial attacks, and overcome the physical limitations of a single RL agent behaving alone.", the related discussions can be found in this repo: [Udacity discuss channel](https://knowledge.udacity.com/questions/281228)
+  * Use 20 agents to improve training speed: "Often, cooperation among multiple RL agents is much more critical: multiple agents must collaborate to complete a common goal, expedite learning, protect privacy, offer resiliency against failures and adversarial attacks, and overcome the physical limitations of a single RL agent behaving alone.", the related discussions can be found in this repo: [Udacity discuss channel](https://knowledge.udacity.com/questions/281228)
 
-* Adjust the OU noise by adding decreasing factors, and related discussions can be found in this repo: [Udacity discuss channel](https://knowledge.udacity.com/questions/25366)
+  * Adjust the OU noise by adding decreasing factors, and related discussions can be found in this repo: [Udacity discuss channel](https://knowledge.udacity.com/questions/25366)
 
-* Change different discount factor GAMMA to see the performance. The agent does not need to see too far to predict its next movement. So slightly reduce the GAMMA value to focus more on the current states.
+  * Change different discount factor GAMMA to see the performance. The agent does not need to see too far to predict its next movement. So slightly reduce the GAMMA value to focus more on the current states.
 
 ![DDPG psudo code](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/ddpg%20psudo%20code.jpg)
 
