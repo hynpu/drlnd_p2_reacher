@@ -32,6 +32,15 @@ In this environment, a double-jointed arm can move to target locations. A reward
 This Youtube video explained DDPG in a very clean way, and it is highly recommend to watch through the video and get some basic understanding of DDPG: 
 
 [![DDPG youtube video](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/youtube%20link.PNG)](https://www.youtube.com/watch?v=oydExwuuUCw)
+
+Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy. A high-level DDPG structure looks the following, and you can see it has some DQN features like the replay buffer, critic network and so on.
+
+![DDPG illustration](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/ddpg%20illustration.png)
+
+The below image shows the compasiron between DDPG and DQN. 
+
+![DDPG vs DQN](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/dqn-ddpg.png)
+
   
 # Techniques to improve the speed and convergence
   
