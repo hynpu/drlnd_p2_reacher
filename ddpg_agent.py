@@ -12,7 +12,7 @@ from torch.nn.utils import clip_grad_norm_
 
 BUFFER_SIZE = int(1e6)  # replay buffer size
 BATCH_SIZE = 128        # minibatch size
-GAMMA = 0.85            # discount factor
+GAMMA = 0.9            # discount factor
 TAU = 1e-3              # for soft update of target parameters
 LR_ACTOR = 5e-4         # learning rate of the actor 
 LR_CRITIC = 5e-4        # learning rate of the critic
