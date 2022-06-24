@@ -102,6 +102,8 @@ The last step is to implement the DDPG algorithm to trian the agents. The code c
 
 * Change different discount factor GAMMA to see the performance. The agent does not need to see too far to predict its next movement. So slightly reduce the GAMMA value to focus more on the current states.
 
+![DDPG psudo code](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/ddpg%20psudo%20code.jpg)
+
 
 # Results:
 
