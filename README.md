@@ -33,9 +33,11 @@ This Youtube video explained DDPG in a very clean way, and it is highly recommen
 
 [![DDPG youtube video](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/youtube%20link.PNG)](https://www.youtube.com/watch?v=oydExwuuUCw)
 
-Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy. A high-level DDPG structure looks the following, and you can see it has some DQN features like the replay buffer, critic network and so on.
+Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy. A high-level DDPG structure looks the following, and you can see it has some DQN features like the replay buffer, critic network and so on. As mentioned earlier: computing the maximum over actions in the target is a challenge in continuous action spaces. DDPG deals with this by using a target policy network to compute an action which approximately maximizes $Q_{\phi_{\text{targ}}}$. The target policy network is found the same way as the target Q-function: by polyak averaging the policy parameters over the course of training.
 
-![DDPG illustration](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/ddpg%20illustration.png)
+Putting it all together, Q-learning in DDPG is performed by minimizing the following MSBE loss with stochastic gradient descent:
+
+![DDPG illustration](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/ddpg%20eqn.png)
 
 The below image shows the compasiron between DDPG and DQN. 
 
@@ -49,3 +51,18 @@ The below image shows the compasiron between DDPG and DQN.
 * Adjust the OU noise by adding decreasing factors, and related discussions can be found in this repo: [Udacity discuss channel](https://knowledge.udacity.com/questions/25366)
 
 * Change different discount factor GAMMA to see the performance. The agent does not need to see too far to predict its next movement. So slightly reduce the GAMMA value to focus more on the current states.
+
+# Approach
+
+## 
+
+
+The high level structure shows as the following:
+
+![DDPG illustration](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/ddpg%20illustration.png)
+
+# Results:
+
+The average rewards along with the traning process show as following:
+
+![Results](https://github.com/hynpu/drlnd_p2_reacher/blob/main/images/episode-rewards.png)
